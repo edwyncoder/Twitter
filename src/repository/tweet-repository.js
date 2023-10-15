@@ -1,11 +1,7 @@
 import Tweet from '../models/tweet.js'
-import CrudRepository from './crud-repository.js';
 
-class TweetRepository extends CrudRepository {
-    constructor() {
-        super(Tweet);
-    }
-    
+class TweetRepository{
+   
     async create(data) {
         try {
             const tweet = await Tweet.create(data);

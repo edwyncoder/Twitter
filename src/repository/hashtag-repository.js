@@ -1,4 +1,4 @@
-import Hashtag from '../models/hashtags.js';
+import Hashtag from '../models/hashtag.js';
 class HashtagRepository {
     
     async create(data) {
