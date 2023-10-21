@@ -27,14 +27,10 @@ class UserService {
         try {
             const user = await this.getUserByEmail(data.email);
             if(!user) {
-                throw {
-                    message: 'no user found'
-                };
+                throw new Error('no user found');
             }
             if(!user.comparePassword(data.password)) {
-                throw {
-                    message: 'incorrect password',
-                };
+                throw new Error('Incorrect password');
             }
             const token = user.genJWT();
             return token;
